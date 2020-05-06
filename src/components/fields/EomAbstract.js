@@ -26,6 +26,26 @@ export default {
     },
     validations: {
       type: [Array, Object]
+    },
+    name: {
+      type: String,
+      required: true
+    },
+    label: {
+      type: String,
+      required: true
+    },
+    help: {
+      type: String,
+      required: false
+    },
+    size: {
+      type: String,
+      required: false
+    },
+    icon: {
+      type: String,
+      required: false
     }
   },
   directives: {
@@ -45,7 +65,8 @@ export default {
   },
   data () {
     return {
-      errors: []
+      errors: [],
+      toggleHelp: false
     }
   },
   methods: {

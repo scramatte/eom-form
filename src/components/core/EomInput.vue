@@ -2,7 +2,7 @@
   <b-col sm="12" md="6">
     <b-form-group :invalid-feedback="error" :state="state">
     <template v-slot:label>
-    <i v-if="help" class="fas fa-info-circle align-middle" @click="showHelp = !showHelp" /> {{label}} <span class="text-danger">*</span>
+    <i v-if="help" class="fas fa-info-circle align-middle" @click="toggleHelp = !toggleHelp" /> {{label}} <span class="text-danger">*</span>
     </template>
     <b-input-group :size="size">
       <b-input-group-text v-if="icon" slot="prepend"><i :class="icon"></i></b-input-group-text>
@@ -14,7 +14,7 @@
       @input="update($event)"
     />
     </b-input-group>
-    <b-form-text v-show="showHelp" v-html="help"></b-form-text>
+    <b-form-text v-show="toggleHelp" v-html="help"></b-form-text>
   </b-form-group>
   </b-col>
 </template>
@@ -27,29 +27,12 @@ export default {
   name: 'EomInput',
   mixins: [ EomAbstract ],
   props: {
-    name: {
-      type: String,
-      required: true
-    },
-    label: {
-      type: String,
-      required: true
-    },
-    help: {
-      type: String,
-      required: false
-    },
-    showHelp: {
-      type: Boolean,
-      default: false
-    },
-    size: {
-      type: String,
-      required: false
-    },
-    icon: {
-      type: String,
-      required: false
+  },
+  methods: {
+  },
+  data () {
+    return {
+      toggleHelp: false
     }
   }
 }

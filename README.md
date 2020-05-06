@@ -21,9 +21,14 @@ This project is not a "proof of concept". It's a lib to solve real life problems
 
 ## Dependencies
 
-eom-form uses mainly [bootstrap-vue], [lodash](https://lodash.com/) and [expression-eval](https://github.com/donmccurdy/expression-eval) internally.
+eom-form uses mainly 
+* [bootstrap-vue], [lodash](https://lodash.com/)
+* [expression-eval](https://github.com/donmccurdy/expression-eval)
+* [vue-i18n](https://kazupon.github.io/vue-i18n/)
 
 moreover it uses other components like [vue-multiselect](https://vue-multiselect.js.org/)
+
+we also include open source icon fonts such font awesome 5, ionicons,open iconic, stroke icons 7, linearicons
 
 ## Installation
 

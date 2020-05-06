@@ -67,16 +67,32 @@ import schema from './data/schema.json'
 Vue.use(EomForm)
 
 export default {
+  name: 'App',
   data () {
     return {
-      model: {
+      status: {
+        message: '',
+        variant: 'success'
       },
-      schema
+      schema,
+      model: {},
+    }
+  },
+  methods: {
+    handleSubmit () {
+      this.status.message = ''
+      let valid = this.$refs.eomForm.validate()
+
+      if (!valid) {
+        console.warn('invalid form')
+        this.status.message = 'invalid_datas'
+        this.status.variant = 'danger'
+        return
+      }
     }
   }
 }
-</script
-
+</script>
 ```
 
 ## Usage in local components

@@ -101,9 +101,9 @@ export default {
 import EomForm from "eom-form";
 
 export default {
-	components: {
-		"eom-form": EomForm
-	}
+  components: {
+    "eom-form": EomForm
+  }
 };
 ```
 

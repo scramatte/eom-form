@@ -1,15 +1,47 @@
 {
   "name": "eom-form",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.7",
+  "description": "vue.js schema based form generator",
+  "private": false,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --public http://0.0.0.0:8080",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build-bundle": "vue-cli-service build --target lib --name eomForm ./src/components/index.js",
+    "lint": "vue-cli-service lint",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
+  "main": "./dist/eomForm.common.js",
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scramatte/eom-form.git"
+  },
+  "keywords": [
+    "vue.js",
+    "form",
+    "schema",
+    "json"
+  ],
+  "author": "Sebastien Cramatte",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/scramatte/eom-form/issues"
+  },
+  "homepage": "https://github.com/scramatte/eom-form#readme",
   "dependencies": {
+    "bootstrap-vue": "^2.13.0",
     "core-js": "^3.6.4",
-    "vue": "^2.6.11"
+    "expression-eval": "^3.1.1",
+    "vue": "^2.6.11",
+    "vue-i18n": "^8.17.4",
+    "vue-router": "^3.1.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.3.0",
@@ -18,7 +50,8 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "vuepress": "^1.4.1"
   },
   "eslintConfig": {
     "root": true,

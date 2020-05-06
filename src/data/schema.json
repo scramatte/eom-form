@@ -11,5 +11,18 @@
         "min": 3
       }
     }
+  },
+  "description": {
+    "component": "EomTextarea",
+    "label": "description",
+    "icon": "ion ion-ios-chatboxes",
+    "help": "enter a long description"
+
+  },
+  "enabled": {
+    "component": "EomCheckbox",
+    "label": "enabled",
+    "help": "this checkbox enable/disable something"
+
   }
 }

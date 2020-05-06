@@ -17,7 +17,7 @@ This project is not a "proof of concept". It's a lib to solve real life problems
 
 ## Documentation
 
-...
+Full updated documentation is available [here](https://scramatte.github.io/eom-form-docs/)
 
 ## Dependencies
 

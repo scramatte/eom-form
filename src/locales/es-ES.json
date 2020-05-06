@@ -1,0 +1,13 @@
+{
+  "submit" : "enviar",
+  "invalid_datas": "datos invalidos",
+  "field_is_required": "campo requerido",
+  "too_short": "valor demasiado corto",
+  "not_the_same_as": "valor diferente",
+  "invalid_email_address": "dirección email invalida",
+  "invalid_identity_number": "número de identidad invalido",
+  "invalid_identity_number_nie": "número de identidad extranjero (NIE) invalido",
+  "invalid_identity_number_cif": "número de identidad empresa (CIF) invalido",
+  "invalid_pin": "número pin invalido",
+  "remaining_chars": "{count} caracteres restantes"
+}

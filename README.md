@@ -22,7 +22,8 @@ This project is not a "proof of concept". It's a lib to solve real life problems
 ## Dependencies
 
 eom-form uses mainly 
-* [bootstrap-vue], [lodash](https://lodash.com/)
+* [bootstrap-vue](https://bootstrap-vue.org/)
+* [lodash](https://lodash.com/)
 * [expression-eval](https://github.com/donmccurdy/expression-eval)
 * [vue-i18n](https://kazupon.github.io/vue-i18n/)
 

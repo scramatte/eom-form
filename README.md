@@ -10,7 +10,7 @@ This project is not a "proof of concept". It's a lib to solve real life problems
 
 ## Screenshots
 
-[Basic Form](https://scramatte.github.io/eom-form-docs/eomform1.png)
+![Basic Form](https://scramatte.github.io/eom-form-docs/eomform1.png)
 
 ## Features
 

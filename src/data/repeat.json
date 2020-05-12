@@ -1,0 +1,59 @@
+[
+  {
+    "component": "EomInput",
+    "model": "firstname",
+    "label": "firstname",
+    "icon": "ion ion-ios-person",
+    "help" : "introduce tu nombre",
+    "validations": {
+      "required": {
+      },
+      "minLength": {
+        "min": 3
+      }
+    }
+  },
+  {
+    "component": "EomTextarea",
+    "model": "description",
+    "label": "description",
+    "icon": "ion ion-ios-chatboxes",
+    "help": "enter a long description"
+
+  },
+  {
+    "component": "EomCheckbox",
+    "model" : "enabled",
+    "label": "enabled",
+    "help": "this checkbox enable/disable something"
+
+  },
+  {
+    "component": "EomRepeat",
+    "model": "group",
+    "schema": [
+      [
+        {
+          "component": "EomInput",
+          "model" : "ipaddress",
+          "label": "ipaddress",
+          "autocomplete": "off",
+          "validations" : {
+            "required": {},
+            "ip": {}
+	  }
+        },
+        {
+          "component": "EomInput",
+          "model": "macaddress",
+          "label": "macaddress",
+          "autocomplete": "off",
+          "validations" : {
+            "required": {},
+            "macAddress": {}
+          }
+        }
+      ]
+    ]
+  }
+]

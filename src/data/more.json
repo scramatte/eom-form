@@ -1,0 +1,172 @@
+{
+  "spanishId": {
+    "component": "EomInput",
+    "label": "spanishId",
+    "icon": "ion ion-ios-finger-print",
+    "help" : "",
+    "validations": {
+      "required": {
+      },
+      "spanishId": {
+      }
+    }
+  },
+  "bankAccount": {
+    "component": "EomInput",
+    "label": "bankAccount",
+    "icon": "ion ion-logo-euro",
+    "help" : "",
+    "validations": {
+      "required": {
+      },
+      "iban": {
+      }
+    }
+  },
+  "ipAddress": {
+    "component": "EomInput",
+    "label": "ipAddress",
+    "help" : "",
+    "validations": {
+      "required": {
+      },
+      "ip": {
+      }
+    }
+  },
+  "ipv6Address": {
+    "component": "EomInput",
+    "label": "ipv6Address",
+    "help" : "",
+    "validations": {
+      "required": {
+      },
+      "ipv6": {
+      }
+    }
+  },
+  "macAddress": {
+    "component": "EomInput",
+    "label": "macAddress",
+    "help" : "",
+    "validations": {
+      "required": {
+      },
+      "macAddress": {
+      }
+    }
+  },
+  "e164PhoneNumber": {
+    "component": "EomInput",
+    "label": "e164PhoneNumber",
+    "help" : "",
+    "validations": {
+      "required": {
+      },
+      "e164PhoneNumber": {
+      }
+    }
+  },
+  "alpha": {
+    "component": "EomInput",
+    "label": "alpha",
+    "validations": {
+      "required": {
+      },
+      "alpha": {
+      }
+    }
+  },
+  "alphaDash": {
+    "component": "EomInput",
+    "label": "alphaDash",
+    "validations": {
+      "required": {
+      },
+      "alphaDash": {
+      }
+    }
+  },
+  "alphaNumeric": {
+    "component": "EomInput",
+    "label": "alphaNumeric",
+    "validations": {
+      "required": {
+      },
+      "alphaNumeric": {
+      }
+    }
+  },
+  "digits": {
+    "component": "EomInput",
+    "label": "digits",
+    "validations": {
+      "required": {
+      },
+      "digits": {
+      }
+    }
+  },
+  "digitsBetween": {
+    "component": "EomInput",
+    "label": "digitsBetween",
+    "help" : "enter number between 5 and 50",
+    "validations": {
+      "required": {
+      },
+      "digitsBetween": {
+        "min": 5,
+        "max": 50
+      }
+    }
+  },
+  "amount": {
+    "component": "EomCurrency",
+    "label": "amount",
+    "validations": {
+      "required": {
+      }
+    }
+  },
+  "numeric": {
+    "component": "EomNumeric",
+    "label": "numeric",
+    "validations": {
+      "required": {
+      }
+    }
+  },
+  "date": {
+    "component": "EomDatepicker",
+    "label": "date",
+    "icon": "ion ion-ios-calendar",
+    "validations": {
+      "required": {
+      } 
+    }
+  },
+  "startsWith": {
+    "component": "EomInput",
+    "label": "startsWith",
+    "help": "must starts with https://",
+    "validations": {
+      "required": {
+      },
+      "startsWith" : {
+        "needle": "https://"
+      }
+    }
+  },
+  "endsWith": {
+    "component": "EomInput",
+    "label": "endsWith",
+    "help": "must ends with EUROS",
+    "validations": {
+      "required": {
+       },
+       "startsWith" : {
+         "needle": "EUROS"
+       }
+    }
+  }
+}

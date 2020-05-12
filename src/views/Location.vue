@@ -1,9 +1,14 @@
 <template>
    <b-container class="p-2">
-      <h5><a href="/">Examples</a> > Basic</h5>
+      <h1>EOM+ form</h1>
+      <h2><a href="/">Examples</a> > Repeat</h2>
       <b-alert :variant="status.variant" dismissible v-model="status.invalid" v-if="status.message">
         {{ $t(status.message) }} 
       </b-alert>
+
+      <div v-if="location">
+        Your location data is {{ location.coords.latitude }}, {{ location.coords.longitude}}
+      </div>
 
       <form class="mb-3" @submit.prevent="handleSubmit" novalidate>
         <EomForm
@@ -17,14 +22,18 @@
 </template>
 
 <script>
-import schema from '../data/basic.json'
+import schema from '../data/upload.json'
+import EomForm from '../components/EomForm.vue'
 
 export default {
   name: 'App',
   components: {
+    EomForm
   },
   data () {
     return {
+      location:null,
+      gettingLocation: false,
       status: {
         message: '',
         variant: 'success',
@@ -32,12 +41,8 @@ export default {
       },
       schema,
       model: {
-        firstName: 'ABC',
-        description: '',
-        enabled: 1,
-        checkboxGroup: [ 'A' ],
-	radioGroup: 'B',
-      },
+        attachments: []
+      }
     }
   },
   methods: {
@@ -55,6 +60,22 @@ export default {
         return
       }
     }
+  },
+  created () {
+    if(!("geolocation" in navigator)) {
+      this.errorStr = 'Geolocation is not available.';
+      return;
+    }
+
+    this.gettingLocation = true;
+
+    navigator.geolocation.getCurrentPosition(pos => {
+      this.gettingLocation = false;
+      this.location = pos;
+    }, err => {
+      this.gettingLocation = false;
+      this.errorStr = err.message;
+    })
   }
 }
 </script>

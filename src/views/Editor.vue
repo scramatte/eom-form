@@ -1,6 +1,6 @@
 <template>
    <b-container class="p-2">
-      <h5><a href="/">Examples</a> > Basic</h5>
+      <h5><a href="/">Examples</a> > Editor</h5>
       <b-alert :variant="status.variant" dismissible v-model="status.invalid" v-if="status.message">
         {{ $t(status.message) }} 
       </b-alert>
@@ -17,11 +17,13 @@
 </template>
 
 <script>
-import schema from '../data/basic.json'
+import schema from '../data/editor.json'
+import EomForm from '../components/EomForm.vue'
 
 export default {
   name: 'App',
   components: {
+    EomForm
   },
   data () {
     return {
@@ -32,11 +34,7 @@ export default {
       },
       schema,
       model: {
-        firstName: 'ABC',
-        description: '',
-        enabled: 1,
-        checkboxGroup: [ 'A' ],
-	radioGroup: 'B',
+        description: ''
       },
     }
   },

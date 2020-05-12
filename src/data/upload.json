@@ -1,0 +1,9 @@
+[
+  {
+    "component": "EomFileUpload",
+    "model": "attachments",
+    "label": "attachments",
+    "url": "https://eom.nixus.es:8443/api/v1/contacts/40/files",
+    "acceptedMimeTypes": "image/jpeg"
+  }
+]

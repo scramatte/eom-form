@@ -35,6 +35,9 @@ export default {
       type: String,
       required: true
     },
+    maxlength: {
+      type: [Number, String]
+    },
     help: {
       type: String,
       required: false

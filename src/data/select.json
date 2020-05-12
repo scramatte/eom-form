@@ -1,0 +1,18 @@
+{
+  "selectOne": {
+    "component": "EomSelectOne",
+    "label": "selectOne",
+    "options": [
+      { "text": "Option A", "value": "A" },
+      { "text": "Option B", "value": "B" }
+    ]
+  },
+  "select": {
+    "component": "EomSelect",
+    "label": "select",
+    "options": [
+      { "text": "Option A", "value": "A" },
+      { "text": "Option B", "value": "B" }
+    ]
+  }
+}

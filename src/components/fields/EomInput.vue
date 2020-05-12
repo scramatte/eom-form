@@ -11,6 +11,7 @@
       :value="value"
       :readOnly="evalExpr(readOnly)"
       :disabled="evalExpr(disabled)"
+      :maxlength="maxlength"
       @input="update($event)"
     />
     </b-input-group>

@@ -17,12 +17,10 @@
 </template>
 
 <script>
-import schema from '../data/basic.json'
+import schema from '../data/minimal.json'
 
 export default {
   name: 'App',
-  components: {
-  },
   data () {
     return {
       status: {

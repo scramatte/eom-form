@@ -65,7 +65,7 @@ export default {
       },
       onEditorReady() {
       },
-      onEditorChange({}) {
+      onEditorChange() {
       }
   }
 }

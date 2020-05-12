@@ -30,11 +30,7 @@ export default {
       },
       schema,
       model: {
-        firstName: 'ABC',
-        description: '',
-        enabled: 1,
-        checkboxGroup: [ 'A' ],
-	radioGroup: 'B',
+        firstName: 'ABC'
       },
     }
   },

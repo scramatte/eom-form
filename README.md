@@ -153,7 +153,7 @@ npm run build-bundle
 
 ## Contribution
 
-We need hands. Please send pull requests improving the usage and fixing bugs, improving documentation and providing better examples, or providing some testing, because these things are important.
+We need hands. Please send pull requests improving the usage and fixing bugs, improving documentation and providing better examples, or providing some testing.
 
 ## License
 

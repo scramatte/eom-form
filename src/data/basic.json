@@ -24,5 +24,29 @@
     "label": "enabled",
     "help": "this checkbox enable/disable something"
 
+  },
+  "checkboxGroup": {
+    "component": "EomCheckboxGroup",
+    "label": "checkboxGroup",
+    "options": [
+      { "text": "Option A", "value": "A" },
+      { "text": "Option B", "value": "B" }
+    ]
+  },
+  "radioGroup": {
+    "component": "EomRadioGroup",
+    "label": "radioGroup",
+    "options": [
+      { "text": "Option A", "value": "A" },
+      { "text": "Option B", "value": "B" }
+    ]
+  },
+  "selectOne": {
+    "component": "EomSelectOne",
+    "label": "selectOne",
+    "options": [
+      { "text": "Option A", "value": "A" },
+      { "text": "Option B", "value": "B" }
+    ]
   }
 }

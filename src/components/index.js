@@ -1,20 +1,19 @@
-import EomForm from './EomForm.vue'
-import { forEach, upperFirst, camelCase } from 'lodash'
+import component from './EomForm.vue'
+import fieldComponents from './fieldsLoader.js'
 
-const components = {
-  'EomForm' : EomForm
+export default {
+  component,
+  fieldComponents,
+  install(Vue, options) {
+    if (options) {
+      console.warn(options)
+    }
+
+    Vue.component("EomForm", component)
+
+    Object.keys(fieldComponents).forEach(name => {
+      Vue.component(name, fieldComponents[name])
+    })
+  }
 }
 
-const fields = require.context(
-  './fields', false, /Eom([\w-_]+)\.vue$/
-)
-
-forEach(fields.keys(), (key) => {
-  const componentConfig = fields(key).default
-  const componentName = upperFirst(
-    camelCase(key.replace(/^\.\//, '').replace(/\.\w+$/, ''))
-  )
-  components[componentName] = componentConfig
-})
-
-export default components

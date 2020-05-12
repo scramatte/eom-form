@@ -31,7 +31,11 @@ eom-form uses mainly
 * [expression-eval](https://github.com/donmccurdy/expression-eval)
 * [vue-i18n](https://kazupon.github.io/vue-i18n/)
 
-moreover it uses other components like [vue-multiselect](https://vue-multiselect.js.org/)
+moreover it uses other components like
+* [vue-multiselect](https://vue-multiselect.js.org/)
+* [vue-currency](https://dm4t2.github.io/vue-currency-input/)
+* [@hokify/vuejs-datepicker](https://github.com/hokify/vuejs-datepicker)
+* [vue-quill-editor](https://github.com/surmon-china/vue-quill-editor)
 
 we also include open source icon fonts such font awesome 5, ionicons,open iconic, stroke icons 7, linearicons
 

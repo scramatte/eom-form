@@ -16,8 +16,14 @@ This project is not a "proof of concept". It's a lib to solve real life problems
 
 *   reactive forms based on schemas
 *   group and repeat form elements
-*   built-in validators
-*   based on bootstrap-vue components
+*   over 20 built-in validators
+*   use bootstrap-vue components and styles
+
+## What we would like to implement
+
+*   Dependency model like in XForms
+*   Expressions into JSON
+*   [Framework7](https://framework7.io/) version
 
 ## Documentation
 

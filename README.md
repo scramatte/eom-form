@@ -145,6 +145,8 @@ npm run build-bundle
 
 Please send pull requests improving the usage and fixing bugs, improving documentation and providing better examples, or providing some testing, because these things are important.
 
+We need hands. So don't hesitate to contact us. This project requires lot of things to grow such docs, testing, examples and for sure improvements.
+
 ## License
 
 eom-form is available under the [GPL v3 license](https://www.gnu.org/licenses/gpl-3.0-standalone.html).

@@ -143,9 +143,7 @@ npm run build-bundle
 
 ## Contribution
 
-Please send pull requests improving the usage and fixing bugs, improving documentation and providing better examples, or providing some testing, because these things are important.
-
-We need hands. So don't hesitate to contact us. This project requires lot of things to grow such docs, testing, examples and for sure improvements.
+We need hands. Please send pull requests improving the usage and fixing bugs, improving documentation and providing better examples, or providing some testing, because these things are important.
 
 ## License
 

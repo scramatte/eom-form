@@ -1,7 +1,7 @@
-import i18n from '@/i18n'
+import i18n from '../i18n'
+
 import { isArray, isNil } from 'lodash'
 import { compile } from 'expression-eval'
-
 
 function getNumIBAN(letter) {
     let letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -18,7 +18,7 @@ function modulo97(iban) {
 }
 
 function isEmpty (value, required) {
-  if (isNil(value) || value === '') {
+ if (isNil(value) || value === '') {
     if (required) {
       return i18n.tc('field_is_required')
     } else {

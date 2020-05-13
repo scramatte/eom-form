@@ -32,11 +32,18 @@ function loadLocaleMessages () {
   return messages
 }
 
+const currentLocale = 'en-GB'
+
+try {
+  const currentLocale = navigator.language || 'en-GB'
+} catch (e) {
+  console.log(e)
+}
+
 export default new VueI18n({
-  locale: process.env.VUE_APP_I18N_LOCALE || 'es-ES',
-  fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || 'es-ES',
+  locale: currentLocale,
+  fallbackLocale: 'en-GB',
   numberFormats,
   dateTimeFormats,
   messages: loadLocaleMessages()
 })
-

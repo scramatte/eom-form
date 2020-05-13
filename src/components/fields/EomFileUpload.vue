@@ -14,8 +14,8 @@
         :accept="acceptedMimeTypes"
         class="input-file" />
       <div class="message">
-        <h3><i class="ion ion-ios-cloud-upload"></i> {{$t('drop_files_here')}}</h3>
-        <small> {{ $t('or_click_to_select_files') }}</small>
+        <h3><i class="ion ion-ios-cloud-upload"></i> drop_files_here</h3>
+        <small>or_click_to_select_files</small>
 	<b-progress variant="success" :value="progress" height="0.5rem" v-if="progress > 0">
         </b-progress>
       </div>
@@ -24,7 +24,7 @@
         <b-col cols="6" md="4" lg="3" v-for="(item,index) in files" :key="item.id" :class="['p-1', (index%2==0?'text-right':'text-left') ]" @mouseover="item.hover = true" @mouseleave="item.hover = false">
           <b-spinner label="Spinning" type="grow" small class="loader" v-show="!item.loaded"/>
           <img :src="item.url" class="img-fluid img-thumbnail h-100 w-100" :alt="item.filename" @load="item.loaded=true">
-          <div v-show="item.hover" class="item-btn"><b-btn @click="handleDelete(item)" variant="success"><i class="ion ion-ios-trash" /> {{$t('delete')}}</b-btn></div>
+          <div v-show="item.hover" class="item-btn"><b-btn @click="handleDelete(item)" variant="success"><i class="ion ion-ios-trash" />delete</b-btn></div>
         </b-col>
       </b-row>
     </div>

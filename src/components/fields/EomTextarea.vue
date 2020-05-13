@@ -15,7 +15,7 @@
       :state="state"
     />
     </b-input-group>
-    <b-form-text v-if="maxlength">{{ $t('remaining_chars',{count: maxlength-value.length}) }}</b-form-text>
+    <b-form-text v-if="maxlength">remaining_chars {{maxlength-value.length}}</b-form-text>
     <b-form-text v-show="toggleHelp" v-html="help"></b-form-text>
   </b-form-group>
   </b-col>

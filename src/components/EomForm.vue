@@ -1,5 +1,4 @@
 <template>
-  <div>
     <b-row>
         <component
             v-for="field in parsedSchema"
@@ -14,8 +13,6 @@
         <slot/>
         </component>
     </b-row>
-    <pre v-html="prettyJSON(value)"></pre>
-  </div>
 </template>
 
 <style>

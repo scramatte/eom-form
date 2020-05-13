@@ -49,7 +49,7 @@ export default {
   watch: {
     value: function () {
       this.$nextTick(() => {
-        // this.validate()
+        this.validate()
       })
     }
   },

@@ -5,9 +5,9 @@
     "label": "firstname",
     "icon": "ion ion-ios-person",
     "help" : "introduce tu nombre",
+    "autocomplete": "false",
+    "required": true,
     "validations": {
-      "required": {
-      },
       "minLength": {
         "min": 3
       }
@@ -18,8 +18,9 @@
     "model": "description",
     "label": "description",
     "icon": "ion ion-ios-chatboxes",
-    "help": "enter a long description"
-
+    "help": "enter a long description",
+    "autocomplete": "false",
+    "maxlength": 50
   },
   {
     "component": "EomCheckbox",
@@ -37,9 +38,9 @@
           "component": "EomInput",
           "model" : "ipaddress",
           "label": "ipaddress",
+          "icon" : "ion ion-ios-globe",
           "autocomplete": "off",
           "validations" : {
-            "required": {},
             "ip": {}
 	  }
         },
@@ -47,9 +48,9 @@
           "component": "EomInput",
           "model": "macaddress",
           "label": "macaddress",
+          "icon": "ion ion-ios-cube",
           "autocomplete": "off",
           "validations" : {
-            "required": {},
             "macAddress": {}
           }
         }

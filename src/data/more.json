@@ -145,13 +145,29 @@
       } 
     }
   },
+  "uri": {
+    "component": "EomInput",
+    "label": "url",
+    "help": "must be an uri from RFC3986",
+    "validations": {
+      "uri" : {
+      }
+    }
+  },
+  "fqdn": {
+    "component": "EomInput",
+    "label": "fqdn",
+    "help": "must be an FQDN",
+    "validations": {
+      "fqdn" : {
+      }
+    }
+  },
   "startsWith": {
     "component": "EomInput",
     "label": "startsWith",
     "help": "must starts with https://",
     "validations": {
-      "required": {
-      },
       "startsWith" : {
         "needle": "https://"
       }
@@ -162,9 +178,7 @@
     "label": "endsWith",
     "help": "must ends with EUROS",
     "validations": {
-      "required": {
-       },
-       "startsWith" : {
+       "endsWith" : {
          "needle": "EUROS"
        }
     }

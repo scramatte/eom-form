@@ -17,15 +17,8 @@ function modulo97(iban) {
     return remainer
 }
 
-function isEmpty (value, required) {
- if (isNil(value) || value === '') {
-    if (required) {
-      return i18n.tc('field_is_required')
-    } else {
-      return ''
-    }
-  }
-  return null
+function isEmpty (value) {
+  return (isNil(value) || value === '') 
 }
 
 export default {
@@ -62,6 +55,39 @@ export default {
   beforeOrIqualDate: function (value) {
     if (!isEmpty(value)) {
       return i18n.tc('invalid_before_or_iqual_date', value)
+    }
+  },
+  creditCard(value) {
+    if (isEmpty(value)) return
+
+    const creditCard = /^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$/;
+    const sanitized = value.replace(/[^0-9]+/g, "");
+    if (!creditCard.test(sanitized)) {
+      return i18n.tc('invalid_credit_card')
+    }
+
+    let sum = 0;
+    let digit;
+    let tmpNum;
+    let shouldDouble;
+    for (let i = sanitized.length - 1; i >= 0; i--) {
+      digit = sanitized.substring(i, i + 1);
+      tmpNum = parseInt(digit, 10);
+      if (shouldDouble) {
+        tmpNum *= 2;
+        if (tmpNum >= 10) {
+          sum += tmpNum % 10 + 1;
+        } else {
+          sum += tmpNum;
+        }
+      } else {
+        sum += tmpNum;
+      }
+      shouldDouble = !shouldDouble;
+    }
+
+    if (!(sum % 10 === 0 ? sanitized : false)) {
+      return i18n.tc('invalid_credit_card')
     }
   },
   date: function (value) {
@@ -163,6 +189,11 @@ export default {
       return i18n.tc('invalid', value)
     }
   },
+  spanishPostcode: function(value) {
+    if (!isEmpty(value) && !/^(?:0[1-9]|[1-4]\d|5[0-2])\d{3}$/.test(value)) {
+      return i18n.tc('invalid_spanish_postcode', value)
+    }
+  },
   spanishId: function (value) {
     if (isEmpty(value)) return
 
@@ -221,6 +252,16 @@ export default {
     let expr = new RegExp('^'+options.needle);
     if (!isEmpty(value) && !expr.test(value)) {
       return i18n.tc('invalid_starts_with', value)
+    }
+  },
+  uri: function (value) {
+    if (!isEmpty(value) && !/^(([^:/?#]+):)?(\/\/([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?/.test(value)) {
+      return i18n.tc('invalid_uri', value)
+    }
+  },
+  fqdn: function (value) {
+    if (!isEmpty(value) && !/(?=^.{4,253}$)(^((?!-)[a-zA-Z0-9-]{0,62}[a-zA-Z0-9]\.)+[a-zA-Z]{2,63}$)/.test(value)) {
+      return i18n.tc('invalid_fqdn', value)
     }
   }
 }

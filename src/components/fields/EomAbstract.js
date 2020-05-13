@@ -21,6 +21,9 @@ export default {
     disabled: {
       type: Boolean
     },
+    required:  {
+      type: Boolean
+    },
     readOnly: {
       type: [String, Boolean]
     },
@@ -77,6 +80,8 @@ export default {
       if (isString(expr)) {
         const fn = compile(expr)
         return fn(this)
+      } else {
+        return expr
       }
     },
     update (value) {

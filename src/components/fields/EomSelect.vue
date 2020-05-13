@@ -6,7 +6,7 @@
         :value="value"
         @input="update($event)"
 	:options="options.map(opt => opt.value)"
-        :multiple=true
+        :multiple="evalExpr(multiple)"
         :custom-label="opt => options.find(i => i.value == opt).text">
       </multiselect>
   </b-form-group>
@@ -28,6 +28,9 @@ export default {
   props: {
     value: {
       type: [Array, Object, String, Number]
+    },
+    multiple: {
+      default: false
     },
     options: {
       type: Array,

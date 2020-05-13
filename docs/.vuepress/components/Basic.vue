@@ -61,7 +61,7 @@ const SCHEMA = {
     ]
   },
   selectOne: {
-    component: "EomSelectOne",
+    component: "EomSelect",
     label: "selectOne",
     options: [
       { text: "Option A", value: "A" },

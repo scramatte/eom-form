@@ -18,7 +18,7 @@
 <script>
 const SCHEMA = {
   selectOne: {
-    component: "EomSelectOne",
+    component: "EomSelect",
     label: "selectOne",
     options: [
       {text: "Option A", value: "A"},
@@ -28,6 +28,7 @@ const SCHEMA = {
   select: {
     component: "EomSelect",
     label: "select",
+    multiple: "true",
     options: [
       {text: "Option A", value: "A"},
       {text: "Option B", value: "B"}

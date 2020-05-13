@@ -53,7 +53,10 @@ export default {
   methods: {
     handleSubmit () {
       this.status.message = ''
-      let valid = this.$refs.eomForm.validate()
+      console.warn('submit')
+ 
+      let valid = false
+      // this.$refs.eomForm.validate()
 
       if (!valid) {
         console.warn('invalid form')

@@ -5,8 +5,8 @@
       class="repeat-row" 
       :key="index"
       tabindex="-1" 
-      @keyup.backspace="deleteRow(index, $event)"
-      @keyup.enter="addRow(index, $event)" >
+      @keydown.backspace="deleteRow(index, $event)"
+      @keydown.enter="addRow(index, $event)" >
         <div class="row-buttons">
           <b-btn variant="danger" class="icon-btn" v-if="value.length  > 1" tabindex="-1" @click="deleteRow(index, $event)" size="xs"><i class="fas fa-minus" /></b-btn>
           <b-btn variant="success" class="icon-btn" v-if="value.length < 100" tabindex="-1" @click="addRow(index, $event)" size="xs"><i class="fas fa-plus" /></b-btn>
@@ -124,8 +124,8 @@ export default {
       }
 
       if (event.keyCode === 13 && this.enterToFocus) {
-        event.preventDefault() 
         event.stopPropagation()
+        event.preventDefault()
 
         let focussableElements = 'input:not([tabindex="-1"]), select:not([tabindex="-1"])'
         let focussable = target.querySelectorAll(focussableElements)

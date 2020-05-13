@@ -10,7 +10,11 @@
           v-model="model"
           ref="eomForm"
         />
-        <b-btn variant="success" type="submit">submit</b-btn>
+        <b-row>
+          <b-col>
+            <b-btn variant="success" type="submit">submit</b-btn>
+          </b-col>
+        </b-row>
       </form>
     </b-container>
 </template>

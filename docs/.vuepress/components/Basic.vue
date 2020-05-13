@@ -1,7 +1,7 @@
 <template>
    <b-container class="p-2">
       <b-alert :variant="status.variant" dismissible v-model="status.invalid" v-if="status.message">
-        {{ $t(status.message) }} 
+        {{status.message}} 
       </b-alert>
 
       <form class="mb-3" @submit.prevent="handleSubmit" novalidate>
@@ -10,7 +10,11 @@
           v-model="model"
           ref="eomForm"
         />
-        <b-btn variant="success" type="submit">submit</b-btn>
+        <b-row>
+          <b-col>
+            <b-btn variant="success" type="submit">submit</b-btn>
+          </b-col>
+        </b-row>
       </form>
  
       <pre class="language-json" v-html="model"></pre>

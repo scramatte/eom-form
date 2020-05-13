@@ -11,7 +11,11 @@
           v-model="model"
           ref="eomForm"
         />
-        <b-btn variant="success" type="submit">{{$t('submit')}}</b-btn>
+        <b-row class="py-2">
+          <b-col>
+            <b-btn variant="success" type="submit">{{$t('submit')}}</b-btn>
+          </b-col>
+        </b-row>
       </form>
     </b-container>
 </template>

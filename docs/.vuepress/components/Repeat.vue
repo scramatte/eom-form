@@ -10,7 +10,11 @@
           v-model="model"
           ref="eomForm"
         />
-        <b-btn variant="success" type="submit">submit</b-btn>
+        <b-row class="py-2">
+          <b-col>
+            <b-btn variant="success" type="submit">submit</b-btn>
+          </b-col>
+        </b-row>
       </form>
 
       <pre class="language-json" v-html="model"></pre>

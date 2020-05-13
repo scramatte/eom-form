@@ -32,10 +32,10 @@ function loadLocaleMessages () {
   return messages
 }
 
-const currentLocale = 'en-GB'
+let currentLocale = 'en-GB'
 
 try {
-  const currentLocale = navigator.language || 'en-GB'
+  currentLocale = navigator.language || 'en-GB'
 } catch (e) {
   console.log(e)
 }

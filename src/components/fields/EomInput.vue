@@ -11,6 +11,7 @@
       :value="value"
       :readOnly="evalExpr(readOnly)"
       :disabled="evalExpr(disabled)"
+      :autocomplete="autocomplete"
       :maxlength="maxlength"
       @input="update($event)"
     />
@@ -28,6 +29,8 @@ export default {
   name: 'EomInput',
   mixins: [ EomAbstract ],
   props: {
+    autocomplete: {
+    }
   },
   methods: {
   },

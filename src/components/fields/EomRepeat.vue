@@ -1,6 +1,12 @@
 <template>
   <div class="repeat-container col-12">
-    <b-row v-for="(item, index) in value" class="repeat-row" :key="index" tabindex="-1" >
+    <b-row 
+      v-for="(item, index) in value"
+      class="repeat-row" 
+      :key="index"
+      tabindex="-1" 
+      @keyup.backspace="deleteRow(index, $event)"
+      @keyup.enter="addRow(index, $event)" >
         <div class="row-buttons">
           <b-btn variant="danger" class="icon-btn" v-if="value.length  > 1" tabindex="-1" @click="deleteRow(index, $event)" size="xs"><i class="fas fa-minus" /></b-btn>
           <b-btn variant="success" class="icon-btn" v-if="value.length < 100" tabindex="-1" @click="addRow(index, $event)" size="xs"><i class="fas fa-plus" /></b-btn>
@@ -70,18 +76,112 @@ import EomContainer from './EomContainer.js'
 
 // import { isArray } from 'lodash'
 
+function setFocussable (element, index) {
+  let focussableElements = 'input:not([tabindex="-1"]), select:not([tabindex="-1"])'
+  let focussable = element.querySelectorAll(focussableElements)
+  let nextElement = null
+
+  if (index < 0) {
+    index = focussable.length + index
+  }
+
+  if ((nextElement = focussable[index])) {
+    nextElement.focus()
+  }
+}
+
 export default {
   mixins: [ EomContainer ],
   data () {
     return {
     }
   },
-  methods: {
-    addRow: function (index) {
-      this.value.splice(index + 1, 0, Vue.util.extend({}, this.value[index]))
+  props: {
+    'minOccurs': {
+      default: 1
     },
-    deleteRow: function (index) {
-      Vue.delete(this.value, index)
+    'maxOccurs': {
+      default: 25
+    },
+    'autofocus': {
+      default: true
+    },
+    'enterToFocus': {
+      default: true
+    },
+    'backspaceToFocus': {
+      default: true
+    },
+    'baseRow': {
+      type: Object
+    }
+  },
+  methods: {
+    addRow: function (index, event) {
+      let target = event.target
+      while (!target.matches('.repeat-row')) {
+        target = target.parentElement
+      }
+
+      if (event.keyCode === 13 && this.enterToFocus) {
+        event.preventDefault() 
+        event.stopPropagation()
+
+        let focussableElements = 'input:not([tabindex="-1"]), select:not([tabindex="-1"])'
+        let focussable = target.querySelectorAll(focussableElements)
+
+        if (document.activeElement && document.activeElement.form) {
+          let tabindex = Array.from(focussable).indexOf(document.activeElement)
+          if (tabindex > -1 && tabindex < focussable.length - 1) {
+            focussable[tabindex + 1].focus()
+            return
+          }
+        }
+      }
+
+      if (this.value.length < this.maxOccurs) {
+        this.value.splice(index + 1, 0, Vue.util.extend({}, this.baseRow || this.value[index]))
+        Vue.nextTick(() => {
+          if (target && target.nextSibling) {
+            setFocussable(target.nextSibling, 0)
+          }
+        })
+      }
+    },
+    deleteRow: function (index, event) {
+      let target = event.target
+      while (!target.matches('.repeat-row')) {
+        target = target.parentElement
+      }
+
+      if (event.keyCode === 8 && this.backspaceToFocus) {
+        event.preventDefault()
+        event.stopPropagation()
+
+        let focussableElements = 'input:not([tabindex="-1"]), select:not([tabindex="-1"])'
+        let focussable = target.querySelectorAll(focussableElements)
+
+        if (document.activeElement && document.activeElement.form) {
+          if (document.activeElement.selectionStart > 0) {
+            return
+          }
+
+          let tabindex = Array.from(focussable).indexOf(document.activeElement)
+          if (tabindex > 0) {
+            let newElement = focussable[tabindex - 1]
+            newElement.focus()
+            newElement.select()
+            return
+          }
+        }
+      }
+
+      if (this.value.length > this.minOccurs) {
+        if (target && target.previousSibling) {
+          setFocussable(target.previousSibling, -1)
+        }
+        Vue.delete(this.value, index)
+      }
     }
   }	
 }

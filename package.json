@@ -1,6 +1,6 @@
 {
   "name": "eom-form",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "vue.js schema based form generator",
   "private": false,
   "scripts": {

@@ -37,7 +37,7 @@
   "homepage": "https://github.com/scramatte/eom-form#readme",
   "dependencies": {
     "@hokify/vuejs-datepicker": "^2.0.2",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap-vue": "^2.13.0",
     "core-js": "^3.6.4",
     "expression-eval": "^3.1.1",
